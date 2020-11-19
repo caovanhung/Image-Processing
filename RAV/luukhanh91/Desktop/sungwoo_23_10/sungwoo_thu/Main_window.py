@@ -379,7 +379,7 @@ class Ui_Detection_edges_Dialog(object):
         self.High_level_horizontalSlider.setMinimum(0)
         self.getAvailablePorts()
         self._serial = QSerialPort()
-        data =self.read_data()
+        #data =self.read_data()
         self._serial.readyRead.connect(self.onReadyRead)
         self._serial.readyRead.connect(self.onReadyRead)
 

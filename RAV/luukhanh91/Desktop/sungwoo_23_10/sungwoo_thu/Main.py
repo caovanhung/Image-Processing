@@ -315,7 +315,7 @@ class Ui_Detection_edges_Dialog(object):
         self.High_level_horizontalSlider.setMinimum(0)
 
 
-        data =self.read_data()
+        #data =self.read_data()
         
  #       GPIO.setmode(GPIO.BCM)
     # set pin as an output pin with optional initial state of HIGH

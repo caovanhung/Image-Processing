@@ -11,14 +11,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter
 
-
-
 from GUI_RUN import*
-
-#import cv2
 from pypylon import pylon
+import numpy as np
+import cv2 as cv
 
-#camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
 
 class Ui_MainWindow_SET(object):
 
@@ -29,6 +26,30 @@ class Ui_MainWindow_SET(object):
         self.ui.setupUi_RUN(self.window)
         self.window.show()
       
+    def camera_init(self):
+        self.camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
+         # Start reading image
+        self.camera.StartGrabbing(pylon.GrabStrategy_LatestImageOnly)
+        self.converter = pylon.ImageFormatConverter()
+         # Convert to OpenCV's BGR color format
+        self.converter.OutputPixelFormat = pylon.PixelType_BGR8packed
+        self.converter.OutputBitAlignment = pylon.OutputBitAlignment_MsbAligned
+    def camera_show(self):
+        while camera.IsGrabbing():
+            grabResult = self.camera.RetrieveResult(5000, pylon.TimeoutHandling_ThrowException)
+         
+            if self.grabResult.GrabSucceeded():
+                # Convert to OpenCV image format
+                image = self.converter.Convert(grabResult)
+                img = self.image.GetArray()
+                self.cv.namedWindow('title', cv.WINDOW_NORMAL)
+                self.cv.imshow('title', img)
+            self.grabResult.Release()
+
+    def camera_exit(self):
+        self.camera.StopGrabbing()
+        self.cv.destroyAllWindows()
+
 
     def setupUi_SET(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
@@ -40,6 +61,16 @@ class Ui_MainWindow_SET(object):
         self.are_camera.setGeometry(QtCore.QRect(0, 140, 781, 731))
         self.are_camera.setWidgetResizable(True)
         self.are_camera.setObjectName("are_camera")
+
+
+
+        self.label = QtGui.QLabel(Dialog)
+        self.label.setGeometry(QtCore.QRect(10, 31, 391, 311))
+        self.label.setText(_fromUtf8(""))
+        self.label.setObjectName(_fromUtf8("label"))
+
+
+
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 779, 729))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
@@ -99,7 +130,7 @@ class Ui_MainWindow_SET(object):
 
 
         self.are_camera.setBackgroundRole(QPalette.Dark)
-        self.are_camera.setWidget(self.viewCam)
+        #self.are_camera.setWidget(self.viewCam)
 
 
 
@@ -121,11 +152,6 @@ class Ui_MainWindow_SET(object):
         self.actionSave.setText(_translate("MainWindow", "Save"))
         self.actionExport.setText(_translate("MainWindow", "Export"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
-
-
-    def viewCam(self):
-        camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
-        camera.Open()
 
 
 
