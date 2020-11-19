@@ -1,0 +1,11 @@
+/home/tranthang/Desktop/sungwoo/cut_image_function/0103cat.jpg
+/home/tranthang/Desktop/sungwoo/image_function/0103dau.jpg
+detection_edges
+38
+108
+81
+308
+77
+237
+0
+0

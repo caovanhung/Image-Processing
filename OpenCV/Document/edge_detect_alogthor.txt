@@ -1,0 +1,10 @@
+Các pixel tạo ra các cạnh trong một ảnh là những pixel mà ở đó có những thay đổi đột ngột(không liên tục) trong chức năng cường độ hình ảnh 
+và mục tiêu của việc phát hiện cạnh là xác định những thay dổi đó
+Input: hình ảnh 2D(thang xám)
+Output: tập hơn các đường cong (cạnh)
+
+-->	Muốn có được các pixel cạnh ( dưới dạng hình ảnh nhị phân) chúng ta cần ngưỡng Gradient hình ảnh . 
+	Ở đây, một ngưỡng gray-level cố định dược sử dụng( chỉ định tất cả pixel có giá trị 0 với hàm clip() của numpy)
+	Để có được các hình ảnh nhị phân, ta sử dụng phương pháp lọc phức tạp  ( tạo ngưỡng bằng cách sử dụng ostu's segmentation ) xem trong chương 8.
+	Bắt đầu với việc dò cạnh Gradient được tính bằng cách sử dụng các xấp xỉ sai khác hữ hạn của các Dervatuves, sau đó chuyển sang bộ lọc Sobel.
+

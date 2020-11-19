@@ -1,0 +1,15 @@
+2020/08/21-16:19:05.274 1e07 Reusing MANIFEST /home/luukhanh91/.config/chromium/Default/IndexedDB/https_linuxize.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/21-16:19:05.275 1e07 Recovering log #4
+2020/08/21-16:19:05.275 1e07 Reusing old log /home/luukhanh91/.config/chromium/Default/IndexedDB/https_linuxize.com_0.indexeddb.leveldb/000004.log 
+2020/08/21-16:19:16.004 1fa4 Level-0 table #8: started
+2020/08/21-16:19:16.015 1fa4 Level-0 table #8: 9379 bytes OK
+2020/08/21-16:19:16.031 1fa4 Delete type=0 #4
+2020/08/21-16:19:16.032 1fa4 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2020/08/21-16:19:16.032 1fa4 Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x01\x01 \x03\x00\xb0\xc4\x08\x05AwB\x00\x011\x00i\x00m\x00g\x00-\x00c\x00a\x00c\x00h\x00e\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00l\x00i\x00n\x00u\x00x\x00i\x00z\x00e\x00.\x00c\x00o\x00m\x00/\x00u\x00t\x00i\x00l\x00c\x00a\x00v\x00e\x00_\x00c\x00o\x00m\x00/\x00l\x00.\x00s\x00v\x00g' @ 447 : 1
+2020/08/21-16:19:16.032 1fa4 Compacting 1@1 + 1@2 files
+2020/08/21-16:19:16.042 1fa4 Generated table #9@1: 73 keys, 5706 bytes
+2020/08/21-16:19:16.043 1fa4 Compacted 1@1 + 1@2 files => 5706 bytes
+2020/08/21-16:19:16.050 1fa4 compacted to: files[ 0 0 1 0 0 0 0 ]
+2020/08/21-16:19:16.051 1fa4 Delete type=2 #5
+2020/08/21-16:19:16.051 1fa4 Delete type=2 #8
+2020/08/21-16:19:16.052 1fa4 Manual compaction at level-1 from '\x00\x01\x01 \x03\x00\xb0\xc4\x08\x05AwB\x00\x011\x00i\x00m\x00g\x00-\x00c\x00a\x00c\x00h\x00e\x00|\x00h\x00t\x00t\x00p\x00s\x00:\x00/\x00/\x00l\x00i\x00n\x00u\x00x\x00i\x00z\x00e\x00.\x00c\x00o\x00m\x00/\x00u\x00t\x00i\x00l\x00c\x00a\x00v\x00e\x00_\x00c\x00o\x00m\x00/\x00l\x00.\x00s\x00v\x00g' @ 447 : 1 .. (end); will stop at (end)

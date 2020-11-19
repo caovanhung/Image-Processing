@@ -1,0 +1,5 @@
+2020/08/04-17:18:02.504 48ed Reusing MANIFEST /home/luukhanh91/.config/chromium/Default/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/04-17:18:23.085 4f7a Level-0 table #5: started
+2020/08/04-17:18:23.097 4f7a Level-0 table #5: 1233 bytes OK
+2020/08/04-17:18:23.109 4f7a Delete type=0 #3
+2020/08/04-17:18:23.109 4f7a Manual compaction at level-0 from (begin) .. (end); will stop at (end)

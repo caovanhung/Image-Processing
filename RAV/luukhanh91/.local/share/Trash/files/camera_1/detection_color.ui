@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>detecton_clor_Dialog</class>
+ <widget class="QDialog" name="detecton_clor_Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>886</width>
+    <height>581</height>
+   </rect>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>3</width>
+    <height>3</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>581</width>
+     <height>491</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QLabel" name="img_label">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>510</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>510</y>
+     <width>86</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>01</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>02</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>03</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>04</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>170</y>
+     <width>92</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GRB</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_2">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>170</y>
+     <width>92</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>HSV</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>230</y>
+     <width>256</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>3</width>
+     <height>3</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="xulyanh_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>510</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Xuly</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

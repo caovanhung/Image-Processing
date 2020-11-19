@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<compiz_session id="1095704284144265f016040540115293300000061550051">
+  <window id="1095704284144265f0160412692140304700000061550056" title="Detection_edges.ui - Qt Creator" class="QtCreator" name="qtcreator">
+    <geometry x="65" y="24" width="1215" height="696"/>
+    <maximized vert="yes" horz="yes"/>
+    <workspace index="0"/>
+  </window>
+  <window id="1095704284144265f0160412692140304700000061550056" title="Save Changes" class="QtCreator" name="qtcreator">
+    <geometry x="434" y="232" width="457" height="200"/>
+    <workspace index="0"/>
+  </window>
+</compiz_session>

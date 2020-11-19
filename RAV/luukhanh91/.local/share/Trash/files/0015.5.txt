@@ -1,0 +1,8 @@
+/home/tranthang/Desktop/camera_1/cut_image_function/0015cat.jpg
+/home/tranthang/Desktop/camera_1/image_function/0015dau.jpg
+detection_color
+288
+508
+155
+380
+False

@@ -1,0 +1,7 @@
+/home/tranthang/Desktop/camera_1/cut_image_function/0003cat.jpg
+/home/tranthang/Desktop/camera_1/image_function/0003dau.jpg
+detection_edges
+287
+491
+89
+278

@@ -1,0 +1,11 @@
+/home/luukhanh91/Desktop/sungwoo/sungwoo/cut_image_function/0011cat.jpg
+/home/luukhanh91/Desktop/sungwoo/sungwoo/image_function/0011dau.jpg
+detection_edges
+43
+584
+93
+296
+254
+255
+0
+0

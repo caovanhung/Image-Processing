@@ -1,0 +1,8 @@
+/home/tranthang/Desktop/camera_1/cut_image_function/0016cat.jpg
+/home/tranthang/Desktop/camera_1/image_function/0016dau.jpg
+detection_color
+304
+499
+239
+497
+True

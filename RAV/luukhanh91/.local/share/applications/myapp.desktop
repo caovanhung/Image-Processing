@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Icon=/home/luukhanh91/Desktop/sungwoo_23_10/sungwoo_thu/dist/myApp/icon.png
+Name=Myapp
+Exec=/home/luukhanh91/Desktop/sungwoo_23_10/sungwoo_thu/dist/myApp/myApp

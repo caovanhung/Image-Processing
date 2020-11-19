@@ -1,0 +1,9 @@
+/home/luukhanh91/Desktop/camera_1/camera_1/cut_image_function/0070cat.jpg
+/home/luukhanh91/Desktop/camera_1/camera_1/image_function/0070dau.jpg
+detection_pixel
+690
+984
+282
+559
+185
+False

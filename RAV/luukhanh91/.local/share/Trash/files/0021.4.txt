@@ -1,0 +1,8 @@
+/home/tranthang/Desktop/camera_1/cut_image_function/0021cat.jpg
+/home/tranthang/Desktop/camera_1/image_function/0021dau.jpg
+detection_color
+443
+737
+259
+561
+False

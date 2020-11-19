@@ -1,0 +1,11 @@
+/home/luukhanh91/Desktop/sungwoo_1/sungwoo/cut_image_function/0011cat.jpg
+/home/luukhanh91/Desktop/sungwoo_1/sungwoo/image_function/0011dau.jpg
+detection_edges
+5
+591
+43
+318
+120
+248
+0
+0

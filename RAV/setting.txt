@@ -1,0 +1,12 @@
+1. Setting PyQt5
+	Sudo apt update
+	sudo pip3 install PyQt5
+
+2. install pylon
+
+
+3. intall pypylon
+	Install pylon
+	Download a binary wheel from the releases page : https://github.com/Basler/pypylon/releases
+		chú ý : [phiên bản python (3.8) phải phù hợp với bản .whl(cp38)]
+	pip3 install <your downloaded wheel>.whl

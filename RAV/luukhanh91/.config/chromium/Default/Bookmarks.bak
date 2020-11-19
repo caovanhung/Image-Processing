@@ -1,0 +1,54 @@
+{
+   "checksum": "192eee5b11dcc2875383a5eb7a41cfcd",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13240904589364249",
+            "guid": "f76cb421-64ea-4a48-8292-1d6f7cafc367",
+            "id": "5",
+            "name": "OpenCV: Install OpenCV-Python in Ubuntu",
+            "type": "url",
+            "url": "https://docs.opencv.org/master/d2/de6/tutorial_py_setup_in_ubuntu.html"
+         }, {
+            "date_added": "13241084724523338",
+            "guid": "7f382f9e-f84a-41a0-ba65-d35a089b49b4",
+            "id": "7",
+            "name": "qt - How to install PyQt for Python 3 in Ubuntu 14.10? - Ask Ubuntu",
+            "type": "url",
+            "url": "https://askubuntu.com/questions/612314/how-to-install-pyqt-for-python-3-in-ubuntu-14-10"
+         }, {
+            "date_added": "13242473773914189",
+            "guid": "5d9c3f99-e022-4bff-923a-38c4349ad645",
+            "id": "9",
+            "name": "How to enable/disable firewall on Ubuntu 18.04 Bionic Beaver Linux - LinuxConfig.org",
+            "type": "url",
+            "url": "https://linuxconfig.org/how-to-enable-disable-firewall-on-ubuntu-18-04-bionic-beaver-linux"
+         } ],
+         "date_added": "13240903246403805",
+         "date_modified": "13242473773914189",
+         "guid": "00000000-0000-4000-a000-000000000002",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13240903246403819",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000003",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13240903246403832",
+         "date_modified": "0",
+         "guid": "00000000-0000-4000-a000-000000000004",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

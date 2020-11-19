@@ -1,0 +1,8 @@
+/home/tranthang/Desktop/camera_1/cut_image_function/0019cat.jpg
+/home/tranthang/Desktop/camera_1/image_function/0019dau.jpg
+detection_color
+420
+731
+287
+572
+True

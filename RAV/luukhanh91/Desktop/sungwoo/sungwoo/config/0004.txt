@@ -1,0 +1,11 @@
+/home/luukhanh91/Desktop/sungwoo/sungwoo/cut_image_function/0004cat.jpg
+/home/luukhanh91/Desktop/sungwoo/sungwoo/image_function/0004dau.jpg
+detection_edges
+17
+584
+74
+351
+143
+255
+0
+0

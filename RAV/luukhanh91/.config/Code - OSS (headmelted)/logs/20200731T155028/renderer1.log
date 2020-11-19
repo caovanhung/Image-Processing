@@ -1,0 +1,1 @@
+[2020-07-31 15:50:41.105] [renderer1] [error] A system error occurred (ENOENT: no such file or directory, open '/usr/share/code-oss/resources/app/out/vs/workbench/workbench.main.js'): Error: ENOENT: no such file or directory, open '/usr/share/code-oss/resources/app/out/vs/workbench/workbench.main.js'

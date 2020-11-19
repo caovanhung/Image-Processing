@@ -1,0 +1,5 @@
+2020/08/03-11:46:31.923 27e1 Reusing MANIFEST /home/luukhanh91/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/03-11:47:03.925 29a7 Level-0 table #5: started
+2020/08/03-11:47:03.949 29a7 Level-0 table #5: 2801 bytes OK
+2020/08/03-11:47:03.959 29a7 Delete type=0 #3
+2020/08/03-11:47:03.960 29a7 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

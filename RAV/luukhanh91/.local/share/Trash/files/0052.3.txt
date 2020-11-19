@@ -1,0 +1,11 @@
+/home/tranthang/Desktop/sungwoo/cut_image_function/0052cat.jpg
+/home/tranthang/Desktop/sungwoo/image_function/0052dau.jpg
+detection_edges
+49
+538
+44
+384
+102
+233
+0
+0

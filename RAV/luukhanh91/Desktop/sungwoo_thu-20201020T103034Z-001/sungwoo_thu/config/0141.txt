@@ -1,0 +1,11 @@
+/home/tranthang/Desktop/sungwoo/cut_image_function/0141cat.jpg
+/home/tranthang/Desktop/sungwoo/image_function/0141dau.jpg
+detection_edges
+49
+91
+93
+299
+173
+237
+0
+0

@@ -1,0 +1,11 @@
+/home/luukhanh91/Desktop/sungwoo_thu-20201020T103034Z-001/sungwoo_thu/cut_image_function/0239cat.jpg
+/home/luukhanh91/Desktop/sungwoo_thu-20201020T103034Z-001/sungwoo_thu/image_function/0239dau.jpg
+detection_edges
+34
+105
+94
+296
+93
+255
+0
+0

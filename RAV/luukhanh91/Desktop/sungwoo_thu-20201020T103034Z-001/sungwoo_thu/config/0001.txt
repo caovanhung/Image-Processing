@@ -1,0 +1,11 @@
+/home/tranthang/Desktop/sungwoo/cut_image_function/0001cat.jpg
+/home/tranthang/Desktop/sungwoo/image_function/0001dau.jpg
+detection_edges
+49
+578
+81
+374
+179
+237
+0
+0

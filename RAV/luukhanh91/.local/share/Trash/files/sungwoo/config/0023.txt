@@ -1,0 +1,11 @@
+/home/luukhanh91/Desktop/sungwoo/cut_image_function/0023cat.jpg
+/home/luukhanh91/Desktop/sungwoo/image_function/0023dau.jpg
+detection_edges
+21
+581
+65
+354
+167
+248
+1
+0
