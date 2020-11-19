@@ -12,12 +12,11 @@
 4.git
 	sudo git status : check trang thai thu muc da san sang commit hay chua
 	sudo git add thumuc : add thu muc vao trang thai san sang commit (sudo git add -A : commit het)
+	
 	sudo git commit -m 'A MESSAGE DESCRIBING WHAT YOU’VE CHANGED'
 	sudo git log : kiem tra cac commit
-	
-	
 	sudo git push -u origin master : push code len repository
-
+	
 	sudo git clone YOUR_REPOSITORY_URL : sao chep repository tu github
 
 
