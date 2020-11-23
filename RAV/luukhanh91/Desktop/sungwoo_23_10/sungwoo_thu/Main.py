@@ -27,10 +27,7 @@ import os
 import cv2
 from pypylon import pylon
 #import RPi.GPIO as GPIO
-output_dc_10 = 23
-output_dc_11=18
-output_dc_20=17
-output_dc_21=27
+
 
 camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
 

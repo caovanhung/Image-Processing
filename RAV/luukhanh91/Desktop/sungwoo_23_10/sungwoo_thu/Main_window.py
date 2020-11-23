@@ -26,10 +26,7 @@ from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMain
 import os
 import cv2
 from pypylon import pylon
-output_dc_10 = 23
-output_dc_11=18
-output_dc_20=17
-output_dc_21=27
+
 
 camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
 
@@ -398,6 +395,7 @@ class Ui_Detection_edges_Dialog(object):
 
         self.pushButton.clicked.connect(self.find_direction)
         self.pushButton_2.clicked.connect(self.Reset_function)
+        
         self.timer = QTimer()
         self.timer.timeout.connect(self.viewCam)
         self.Run_detection_edges_pushButton.clicked.connect(self.controlTimer)
