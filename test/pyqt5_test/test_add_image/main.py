@@ -13,7 +13,7 @@ class img_viewed(QWidget):
     def __init__(self,parent =None):
         super(img_viewed,self).__init__(parent)
         self.parent = parent
-        self.width = 960
+        self.width = 1500
         self.height = 500
 
         self.scroll_ares_images = QScrollArea(self)
@@ -26,7 +26,7 @@ class img_viewed(QWidget):
         self.gridLayout = QGridLayout(self.scrollAreaWidgetContents)
         self.scroll_ares_images.setWidget(self.scrollAreaWidgetContents)
 
-        self.scroll_ares_images.setGeometry(20, 50, self.width, self.height)
+        self.scroll_ares_images.setGeometry(20, 50, self.width, self.height)  # khung show image
         self.vertocal1 = QVBoxLayout()
 
 
@@ -47,13 +47,13 @@ class img_viewed(QWidget):
         self.start_file_pushbutton.setText('Start')
         self.start_file_pushbutton.clicked.connect(self.start_img_viewer)
 
-        self.vertocal1.addWidget(self.scroll_ares_images)
+        self.vertocal1.addWidget(self.scroll_ares_images) # set khung show img can hang doc
         self.show()
 
 
 
         #Dat kich thuoc xem truoc cua hinh anh
-        self.displayed_image_size = 100
+        self.displayed_image_size = 200
         self.col = 0
         self.row =0
 
@@ -75,7 +75,7 @@ class img_viewed(QWidget):
     def start_img_viewer(self):
         if self.initial_path:
             file_path = self.initial_path
-            print('file_path为{}'.format(file_path))
+            print('file_path{}'.format(file_path))
             print(file_path)
             img_type = 'png'
             if file_path and img_type:
@@ -99,17 +99,6 @@ class img_viewed(QWidget):
         else:
 
             QMessageBox.warning(self, 'Error', 'Tep trong, vui long doi')
-
-
-
-    def loc_fil(self,stre):
-        print('Dia chi luu tru la{}'.format(stre))
-        self.initial_path = stre
-
-    def geng_path(self,loc):
-        print('Duong dan la: , , , ,{}'.format(loc))
-    def gen_type(self,type):
-        print('Cac loai：，，，，{}'.format(type))
 
 
     def addImage(self, pixmap, image_id):
@@ -145,17 +134,10 @@ class img_viewed(QWidget):
         #Khu vuc hien thi hinh anh
         scroll_area_images_width = self.width
         if scroll_area_images_width > self.displayed_image_size:
-
             pic_of_columns = scroll_area_images_width // self.displayed_image_size  #tinh toan 1 hang va 1 so cot
         else:
             pic_of_columns = 1
         return pic_of_columns
-
-    def setDisplayedImageSize(self,image_size):
-        self.displayed_image_size =image_size
-
-
-
 
 class QClickableImage(QWidget):
     image_id =''
@@ -163,11 +145,11 @@ class QClickableImage(QWidget):
     def __init__(self,width =0,height =0,pixmap =None,image_id = ''):
         QWidget.__init__(self)
 
-        self.layout =QVBoxLayout(self)
+        self.layout =QVBoxLayout(self) #sua o day
         self.label1 = QLabel()
-        self.label1.setObjectName('label1')
+        self.label1.setObjectName('label1') # cot 1
         self.lable2 =QLabel()
-        self.lable2.setObjectName('label2')
+        self.lable2.setObjectName('label2') #cot 2
         self.width =width
         self.height = height
         self.pixmap =pixmap
