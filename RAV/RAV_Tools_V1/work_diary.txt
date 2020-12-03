@@ -1,0 +1,13 @@
+1. 27/11
+	Công việc: Viết, chỉnh sửa về register_image( chức năng lưu ảnh lấy mẫu từ camera)
+	Mô tả: Để lưu ảnh lấy mẫu từ camera có 2 cách:
+		-Thứ 1: Copy trực tiếp vào thư mục trong cài đặt có tên là 'Image Raw'
+		-Thứ 2: Chụp ảnh từ camera và lưu vào trong thư mục "Image Raw"
+	Chức năng: Từ GUI main, nhấn Register thì sẽ mở lên màn hình Register: 
+		-Lưu ảnh:Nhấn Save để chụp ảnh, ảnh được chụp sẽ lưu vào thư mục "Image Raw" và đồng thời vùng" Show image" sẽ cập nhât lại ảnh trong thư mục.
+		-Xóa ảnh:Xóa trên vùng "Show image" bằng click right mouse hoặc xóa trực tiếp trong thư mục "Image Raw". Khi đó yêu cầu vùng "Show image" phải cập nhật được lại list ảnh trong "Image Raw" và hiển thị.
+
+	Giả quyết:
+	
+
+		
