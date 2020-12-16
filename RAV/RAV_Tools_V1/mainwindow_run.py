@@ -22,7 +22,7 @@ from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMain
 
 import tkinter as tk
 root = tk.Tk()
-width_px = int(root.winfo_screenwidth())
+width_px = int(root.winfo_screenwidth()/2)
 height_px = int(root.winfo_screenheight())
 
 space_X = int(width_px/10)
@@ -113,7 +113,7 @@ class Ui_Form_camera(object):
         _translate = QtCore.QCoreApplication.translate
         Form_camera.setWindowTitle(_translate("Form_camera", "Form"))
         self.btn_RUN.setText(_translate("Form_camera", "RUN"))
-        self.btn_SET_RUN.setText(_translate("Form_camera", "SET/RUN"))
+        self.btn_SET_RUN.setText(_translate("Form_camera", "GO TO MODE SETUP"))
         self.label_stt_OK_NG.setText(_translate("Form_camera", "OK"))
 
 
