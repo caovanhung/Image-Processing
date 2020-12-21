@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QScrollArea" name="scrollArea_ShowImage">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>1000</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>998</width>
+      <height>798</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_Open">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>950</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="box_SelecImage">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>950</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_SaveImage">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>950</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save Image</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_Process">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>950</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Xu Ly</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_Run">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>950</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Run</string>
+   </property>
+  </widget>
+  <widget class="QScrollBar" name="horizontalScrollBar_Thresold">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>850</y>
+     <width>1000</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_Infor">
+   <property name="geometry">
+    <rect>
+     <x>1100</x>
+     <y>10</y>
+     <width>500</width>
+     <height>400</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
