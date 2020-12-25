@@ -275,6 +275,7 @@ class Ui_Dialog(object):
             image = converter.Convert(grabResult)
             self.img = image.GetArray()
             image = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
+            
             height, width, channel = image.shape
             step = channel * width
             qImg = QImage(image.data, width, height, step, QImage.Format_RGB888)

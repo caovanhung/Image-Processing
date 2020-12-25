@@ -5,10 +5,10 @@ import imutils
 import cv2
 
 # load the image
-image = cv2.imread('image.png')
+image = cv2.imread('test1.png')
 
 # find all the 'black' shapes in the image
-lower = np.array([180, 50, 200])
+lower = np.array([20, 50, 200])
 upper = np.array([200, 70, 255])
 
 shapeMask = cv2.inRange(image, lower, upper)

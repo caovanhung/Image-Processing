@@ -228,49 +228,33 @@ class Ui_Form(object):
             self.img_thresold_label.setPixmap(QPixmap.fromImage(qImg))
             self.img_thresold_label.setfdk(0)
 
-    def processing_image(self):
-        self.name_of_image = self.box_SelecImage.currentText()
-        image = self.name_of_image +"cat"+".bmp"
 
+
+    def remove_are_less_more(self,image,num):
+        self.name_of_image = self.box_SelecImage.currentText()
+        name = self.name_of_image +"cat"+".bmp"
         #remove are less stand 
-        self.img = cv2.imread(image,0)
-        contours,hierarchy = cv2.findContours( self.img , cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+        contours,hierarchy = cv2.findContours( image , cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contour = contours
 
         c_max = []
         for i in range(len(contour)):
             cnt = contours[i]
             area = cv2.contourArea(cnt)
-            if area < 200:
+            if area < num:
                 contour.append(contour[i])
                 c_min = []
                 c_min.append(cnt)
-                cv2.drawContours(self.img, c_min, -1, (0, 0, 0), thickness=-1)
+                cv2.drawContours(image, c_min, -1, (0, 0, 0), thickness=-1)
                 continue
             c_max.append(cnt)
-        cv2.drawContours(self.img, c_max, -1, (255, 255, 255), thickness=-1)
-        cv2.imwrite(image,self.img)
+        cv2.drawContours(image, c_max, -1, (255, 255, 255), thickness=-1)
+        cv2.imwrite(name,image)
 
-        #caculation are from image new
-        self.img = cv2.imread(image,0)
-        contours,hierarchy = cv2.findContours(self.img , cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        contour = contours
-        print("Count")
-        print(contour)
+    def  caculate_contourArea(self,image):
 
-        cv2.drawContours(self.img, contour, -1, (0, 0, 255), 2)
-
-        cv2.imwrite('test.jpg',self.img)
-        self.img = cv2.imread('test.jpg',0)
-
-        height,width = self.img.shape
-        step = width
-        qImg = QImage(self.img.data, width, height, step, QImage.Format_Grayscale8)
-        pixmap = QPixmap.fromImage(qImg)
-        self.img_thresold_label.setPixmap(QPixmap.fromImage(qImg))
-        self.img_thresold_label.setCursor(QtCore.Qt.CrossCursor)
-        self.img_thresold_label.setfdk(1)
-
+        contour,hierarchy = cv2.findContours( image , cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         area = 0
         min=111111
         max=0
@@ -285,6 +269,38 @@ class Ui_Form(object):
         self.tableWidget_Infor.setItem(2,1,QTableWidgetItem(str(area)))
         self.tableWidget_Infor.setItem(3,1,QTableWidgetItem(str(max)))
         self.tableWidget_Infor.setItem(4,1,QTableWidgetItem(str(min)))
+
+    def draw_contours(self,image):
+        self.name_of_image = self.box_SelecImage.currentText()
+        name = self.name_of_image +'cat'+'.bmp'
+
+        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        ret, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
+        contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        print(len(contours))
+        cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
+        cv2.imwrite(name,image)
+
+    def show_img_processed(self,image):
+        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)           
+        height, width, channel = img.shape
+        step = channel * width
+        qImg = QImage(img.data, width, height, step, QImage.Format_RGB888)
+        self.img_thresold_label.setPixmap(QPixmap.fromImage(qImg))
+        self.img_thresold_label.setCursor(QtCore.Qt.CrossCursor)
+        self.img_thresold_label.setfdk(1)
+
+    def processing_image(self):
+        self.name_of_image = self.box_SelecImage.currentText()
+        name = self.name_of_image +'cat'+'.bmp'
+
+        self.img_process = cv2.imread(name,0)
+        self.remove_are_less_more(self.img_process,500)
+        self.caculate_contourArea(self.img_process)
+
+        img = cv2.imread(name)
+        self.draw_contours(img)
+        self.show_img_processed(img)
 
 if __name__ == "__main__":
     import sys
