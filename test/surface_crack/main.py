@@ -13,6 +13,7 @@ from PyQt5.QtGui import QImage, QPixmap, QPalette, QPainter
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import QRect, Qt
 from pypylon import pylon
+
 #camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
 import os
 import cv2
@@ -20,14 +21,9 @@ import cv2
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-global allmin
-global allmax
-global allarea
-global allnum
-allmin=50000
-allmax=0
-allarea=0
-allnum=0
+global REMOVE_ARE
+REMOVE_ARE=1700
+
 
 class Threshold_MyLabel(QLabel):
     x0 = 0
@@ -163,6 +159,7 @@ class Ui_Form(object):
         self.box_SelecImage.setItemText(1, _translate("Form", "02"))
         self.box_SelecImage.setItemText(2, _translate("Form", "03"))
         self.box_SelecImage.setItemText(3, _translate("Form", "04"))
+        self.box_SelecImage.setItemText(4, _translate("Form", "05"))
 
 
         self.btn_Open.clicked.connect(self.open_image)
@@ -178,7 +175,6 @@ class Ui_Form(object):
         self.img = cv2.imread(image,0)
         self.img_1=cv2.imread(image,0)
 
-
         height,width = self.img.shape
         step = width
         qImg = QImage(self.img.data, width, height, step, QImage.Format_Grayscale8)
@@ -189,7 +185,6 @@ class Ui_Form(object):
         self.btn_Open.setEnabled(1)
         self.horizontalScrollBar_Thresold.setEnabled(1)
         self.box_SelecImage.setEnabled(1)
-
 
     def save_image_Thresholded(self):
         self.name_of_image = self.box_SelecImage.currentText()
@@ -214,11 +209,11 @@ class Ui_Form(object):
             self.y00=self.img_thresold_label.y0
             self.y10=self.img_thresold_label.y1
 
-            self.threshold_img=Threshold_xulyanh(self.img,self.img_1,self.x00,self.y00,self.x10,self.y10)
             self.thresh_value=self.horizontalScrollBar_Thresold.value()
             self.tableWidget_Infor.setItem(0,1,QTableWidgetItem(str(self.thresh_value)))
 
-            self.threshold_img.Threshold_xuly(self.thresh_value,1)
+            self.threshold_img=Class_Threshold(self.img,self.img_1,self.x00,self.y00,self.x10,self.y10)
+            self.threshold_img.SimpleThresholding(self.thresh_value,1)
             #self.threshold_img.Threshold_xuly(self.thresh_value,2)
 
             height, width  =self.img.shape
@@ -228,8 +223,13 @@ class Ui_Form(object):
             self.img_thresold_label.setPixmap(QPixmap.fromImage(qImg))
             self.img_thresold_label.setfdk(0)
 
-
-
+###############################################Enhance image####################################
+    def pre_process_clahe(self,image):
+        gray = cv2.cvtColor(image, cv.COLOR_RGB2GRAY)
+        clahe = cv2.createCLAHE(5, (8,8))
+        dst = clahe.apply(gray)
+        cv2.imwrite("03.bmp", dst)
+###############################################CONTOURS#########################################
     def remove_are_less_more(self,image,num):
         self.name_of_image = self.box_SelecImage.currentText()
         name = self.name_of_image +"cat"+".bmp"
@@ -265,6 +265,7 @@ class Ui_Form(object):
                 if cv2.contourArea(contour[i])<min:
                     min=cv2.contourArea(contour[i])
                 area += cv2.contourArea(contour[i])
+                cv2.putText(image,str(contour[i]),(00,185),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),1,cv2.LINE_AA, True)
         self.tableWidget_Infor.setItem(1,1,QTableWidgetItem(str(len(contour))))
         self.tableWidget_Infor.setItem(2,1,QTableWidgetItem(str(area)))
         self.tableWidget_Infor.setItem(3,1,QTableWidgetItem(str(max)))
@@ -278,11 +279,17 @@ class Ui_Form(object):
         ret, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
         contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         print(len(contours))
-        cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
+        #cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
+
+
+        for i in range(len(contours)):
+            cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
+            x,y= cv2.boundingRect(i)
+            cv2.putText(image,str(cv2.contourArea(contours[i])),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,.5,(0,255,0),1,cv2.LINE_AA)
         cv2.imwrite(name,image)
 
     def show_img_processed(self,image):
-        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)           
+        img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         height, width, channel = img.shape
         step = channel * width
         qImg = QImage(img.data, width, height, step, QImage.Format_RGB888)
@@ -295,7 +302,7 @@ class Ui_Form(object):
         name = self.name_of_image +'cat'+'.bmp'
 
         self.img_process = cv2.imread(name,0)
-        self.remove_are_less_more(self.img_process,500)
+        self.remove_are_less_more(self.img_process,REMOVE_ARE)
         self.caculate_contourArea(self.img_process)
 
         img = cv2.imread(name)
