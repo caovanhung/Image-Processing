@@ -22,7 +22,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 global REMOVE_ARE
-REMOVE_ARE=1700
+REMOVE_ARE= 1500
 
 
 class Threshold_MyLabel(QLabel):
@@ -89,6 +89,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1920, 1080)
+
         self.scrollArea_ShowImage = QtWidgets.QScrollArea(Form)
         self.scrollArea_ShowImage.setGeometry(QtCore.QRect(10, 10, 1000, 800))
         self.scrollArea_ShowImage.setWidgetResizable(True)
@@ -102,6 +103,19 @@ class Ui_Form(object):
         self.img_thresold_label.setWordWrap(True)
         self.img_thresold_label.setObjectName("label")
         self.scrollArea_ShowImage.setWidget(self.img_thresold_label)
+
+
+        self.label_stt_OK_NG = QtWidgets.QLabel(Form)
+        self.label_stt_OK_NG.setGeometry(QtCore.QRect( 1700, 10 , 100, 100))
+        self.label_stt_OK_NG.setStyleSheet("background: green")
+        font = QtGui.QFont()
+        font.setPointSize(30)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_stt_OK_NG.setFont(font)
+        self.label_stt_OK_NG.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_stt_OK_NG.setObjectName("label_stt_OK_NG")
+
 
         self.btn_Open = QtWidgets.QPushButton(Form)
         self.btn_Open.setGeometry(QtCore.QRect(10, 950, 100, 50))
@@ -135,13 +149,13 @@ class Ui_Form(object):
         self.horizontalScrollBar_Thresold.setMinimum(0)
 
         self.tableWidget_Infor = QtWidgets.QTableWidget(Form)
-        self.tableWidget_Infor.setGeometry(QtCore.QRect(1100, 10, 500, 400))
+        self.tableWidget_Infor.setGeometry(QtCore.QRect(1100, 10, 300, 200))
         self.tableWidget_Infor.setObjectName("tableWidget_Infor")
         self.tableWidget_Infor.setColumnCount(2)
         self.tableWidget_Infor.setRowCount(5)
         self.tableWidget_Infor.setItem(0,0,QTableWidgetItem("Threshold"))
         self.tableWidget_Infor.setItem(1,0,QTableWidgetItem("Tong so"))
-        self.tableWidget_Infor.setItem(2,0,QTableWidgetItem("Dien tich toan phan"))
+        self.tableWidget_Infor.setItem(2,0,QTableWidgetItem("Tong dien tich"))
         self.tableWidget_Infor.setItem(3,0,QTableWidgetItem("Dien tich lon nhat"))
         self.tableWidget_Infor.setItem(4,0,QTableWidgetItem("Dien tich nho nhat"))
 
@@ -168,6 +182,9 @@ class Ui_Form(object):
 
         self.horizontalScrollBar_Thresold.sliderMoved.connect(self.Threshold_bar)
         self.horizontalScrollBar_Thresold.setEnabled(1)
+
+        self.label_stt_OK_NG.setText(_translate("Form", "OK"))
+
 
     def open_image(self):
         self.name_of_image = self.box_SelecImage.currentText()
@@ -213,8 +230,7 @@ class Ui_Form(object):
             self.tableWidget_Infor.setItem(0,1,QTableWidgetItem(str(self.thresh_value)))
 
             self.threshold_img=Class_Threshold(self.img,self.img_1,self.x00,self.y00,self.x10,self.y10)
-            self.threshold_img.SimpleThresholding(self.thresh_value,1)
-            #self.threshold_img.Threshold_xuly(self.thresh_value,2)
+            self.threshold_img.SimpleThresholding(self.thresh_value,2)
 
             height, width  =self.img.shape
             step = width
@@ -233,8 +249,9 @@ class Ui_Form(object):
     def remove_are_less_more(self,image,num):
         self.name_of_image = self.box_SelecImage.currentText()
         name = self.name_of_image +"cat"+".bmp"
-        #remove are less stand 
+        name1 = self.name_of_image +'removed'+'.bmp'
 
+        #remove are less stand 
         contours,hierarchy = cv2.findContours( image , cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         contour = contours
 
@@ -243,7 +260,7 @@ class Ui_Form(object):
             cnt = contours[i]
             area = cv2.contourArea(cnt)
             if area < num:
-                contour.append(contour[i])
+                contour.append(contour[i]) # add them vao chuoi
                 c_min = []
                 c_min.append(cnt)
                 cv2.drawContours(image, c_min, -1, (0, 0, 0), thickness=-1)
@@ -251,9 +268,9 @@ class Ui_Form(object):
             c_max.append(cnt)
         cv2.drawContours(image, c_max, -1, (255, 255, 255), thickness=-1)
         cv2.imwrite(name,image)
+        cv2.imwrite(name1,image)
 
     def  caculate_contourArea(self,image):
-
         contour,hierarchy = cv2.findContours( image , cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         area = 0
         min=111111
@@ -265,28 +282,32 @@ class Ui_Form(object):
                 if cv2.contourArea(contour[i])<min:
                     min=cv2.contourArea(contour[i])
                 area += cv2.contourArea(contour[i])
-                cv2.putText(image,str(contour[i]),(00,185),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),1,cv2.LINE_AA, True)
         self.tableWidget_Infor.setItem(1,1,QTableWidgetItem(str(len(contour))))
         self.tableWidget_Infor.setItem(2,1,QTableWidgetItem(str(area)))
         self.tableWidget_Infor.setItem(3,1,QTableWidgetItem(str(max)))
         self.tableWidget_Infor.setItem(4,1,QTableWidgetItem(str(min)))
+        return len(contour)
 
     def draw_contours(self,image):
         self.name_of_image = self.box_SelecImage.currentText()
         name = self.name_of_image +'cat'+'.bmp'
+        name1 = self.name_of_image +'drawed'+'.bmp'
 
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         ret, binary = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY)
         contours, hierarchy = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        print(len(contours))
-        #cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
 
-
+        cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
         for i in range(len(contours)):
-            cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
-            x,y= cv2.boundingRect(i)
-            cv2.putText(image,str(cv2.contourArea(contours[i])),(x,y-5),cv2.FONT_HERSHEY_SIMPLEX,.5,(0,255,0),1,cv2.LINE_AA)
+            #cv2.drawContours(image, contours, -1, (0, 0, 255), 1)
+            cnt = contours[i]
+            M = cv2.moments(cnt)
+            cx = int(M['m10']/M['m00'])
+            cy = int(M['m01']/M['m00'])
+            cv2.putText(image,str(cv2.contourArea(contours[i])),(cx,cy),cv2.FONT_HERSHEY_SIMPLEX,.5,(0,255,0),1,cv2.LINE_AA)
         cv2.imwrite(name,image)
+        cv2.imwrite(name1,image)
+
 
     def show_img_processed(self,image):
         img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -298,16 +319,24 @@ class Ui_Form(object):
         self.img_thresold_label.setfdk(1)
 
     def processing_image(self):
+        flag_error = 0
         self.name_of_image = self.box_SelecImage.currentText()
         name = self.name_of_image +'cat'+'.bmp'
-
         self.img_process = cv2.imread(name,0)
+     
         self.remove_are_less_more(self.img_process,REMOVE_ARE)
-        self.caculate_contourArea(self.img_process)
+        flag_error = self.caculate_contourArea(self.img_process)
 
         img = cv2.imread(name)
         self.draw_contours(img)
         self.show_img_processed(img)
+
+        if flag_error > 0:
+            self.label_stt_OK_NG.setText("NG")
+            self.label_stt_OK_NG.setStyleSheet("background: red")
+        else:
+            self.label_stt_OK_NG.setText("OK")
+            self.label_stt_OK_NG.setStyleSheet("background: green")
 
 if __name__ == "__main__":
     import sys
