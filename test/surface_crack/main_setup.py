@@ -1,6 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QAction, QTableWidget,QTableWidgetItem,QVBoxLayout,QLabel
+from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QAction, QTableWidget,QTableWidgetItem,QVBoxLayout,QLabel,QCheckBox
 from PyQt5.QtGui import QImage, QPixmap, QPainter, QPen, QGuiApplication
 from PyQt5.QtGui import QIcon
 from Threshold_xulyanh import*
@@ -15,6 +15,7 @@ from PyQt5.QtCore import QRect, Qt
 from pypylon import pylon
 
 #camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
+
 import os
 import cv2
 
@@ -310,13 +311,14 @@ class Ui_MainWindow(object):
         self.btn_RUN.setText(_translate("MainWindow", "RUN"))
         self.label_stt_OK_NG.setText(_translate("MainWindow", "OK"))
 
-
-
-
-
         #self.btn_SaveSetting.clicked.connect()
         #self.btn_ResetSetting.clicked.connect()
 
+        self.checkBox_Thresold.toggled.connect(self.checkBoxThresold)
+        self.checkBox_CLAHE.toggled.connect(self.checkBoxCLAHE)
+        self.checkBox_removeAREA.toggled.connect(self.checkBoxRemoveAREA)
+        self.checkBox_DrawArea.toggled.connect(self.checkBoxDrawArea)
+        self.checkBox_WriteArea.toggled.connect(self.checkBoxWriteArea)
 
 
         self.btn_OpenImage.clicked.connect(self.open_image)
@@ -324,6 +326,7 @@ class Ui_MainWindow(object):
         self.ScrollBar_Thresol.sliderMoved.connect(self.Threshold_bar)
         self.ScrollBar_Thresol.setEnabled(1)
 
+################################################################################################
     def open_image(self):
         self.name_of_image = self.comboBox_listImage.currentText()
         image = self.name_of_image + ".bmp"
@@ -357,6 +360,37 @@ class Ui_MainWindow(object):
         cv2.imwrite(self.file_img,imgcat)
         cv2.imwrite(self.file_img_cut,imgcut)
 
+###################################################################################################
+    def checkBoxThresold(self):
+        if self.checkBox_Thresold.isChecked() == True:
+            print('checkBoxThresold is Select')
+        else:
+            print('checkBoxThresold is unSelect')
+
+    def checkBoxCLAHE(self):
+        if self.checkBox_CLAHE.isChecked() == True:
+            print('checkBoxCLAHE is Select')
+        else:
+            print('checkBoxCLAHE is unSelect')
+
+    def checkBoxRemoveAREA(self):
+        if self.checkBox_removeAREA.isChecked() == True:
+            print('checkBoxRemoveAREA is Select')
+        else:
+            print('checkBoxRemoveAREA is unSelect')
+
+    def checkBoxDrawArea(self):
+        if self.checkBox_DrawArea.isChecked() == True:
+            print('checkBoxDrawArea is Select')
+        else:
+            print('checkBoxDrawArea is unSelect')
+
+    def checkBoxWriteArea(self):
+        if self.checkBox_WriteArea.isChecked() == True:
+            print('checkBoxWriteArea is Select')
+        else:
+            print('checkBoxWriteArea is unSelect')
+###################################################################################################
     def Threshold_bar(self):
         if  self.img_thresold_label.x0 and self.img_thresold_label.x1 and self.img_thresold_label.y0 and self.img_thresold_label.y1 :
             self.x00=self.img_thresold_label.x0
@@ -383,6 +417,7 @@ class Ui_MainWindow(object):
         clahe = cv2.createCLAHE(5, (8,8))
         dst = clahe.apply(gray)
         cv2.imwrite("03.bmp", dst)
+
 ###############################################CONTOURS#########################################
     def remove_are_less_more(self,image,num):
         self.name_of_image = self.comboBox_listImage.currentText()
