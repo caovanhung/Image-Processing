@@ -1,8 +1,0 @@
-2020/10/26-11:41:33.420 1cb7 Reusing MANIFEST /home/luukhanh91/.config/chromium/Default/IndexedDB/https_s.0cf.io_0.indexeddb.leveldb/MANIFEST-000001
-2020/10/26-11:41:33.421 1cb7 Recovering log #7
-2020/10/26-11:41:33.421 1cb7 Reusing old log /home/luukhanh91/.config/chromium/Default/IndexedDB/https_s.0cf.io_0.indexeddb.leveldb/000007.log 
-2020/10/26-11:42:05.453 1ee8 Level-0 table #12: started
-2020/10/26-11:42:05.453 1ee8 Level-0 table #12: 0 bytes OK
-2020/10/26-11:42:05.461 1ee8 Delete type=0 #7
-2020/10/26-11:42:05.462 1ee8 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
-2020/10/26-11:42:05.462 1ee8 Manual compaction at level-1 from (begin) .. (end); will stop at (end)

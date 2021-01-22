@@ -1,9 +1,0 @@
-/home/luukhanh91/Desktop/camera_1/camera_1/cut_image_function/0067cat.jpg
-/home/luukhanh91/Desktop/camera_1/camera_1/image_function/0067dau.jpg
-detection_pixel
-134
-319
-142
-333
-0
-True

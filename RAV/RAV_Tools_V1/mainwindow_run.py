@@ -9,6 +9,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import QTimer
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import QRect, Qt
+from PyQt5 import QtWidgets, QtCore
 
 
 from PyQt5.QtCore import Qt
@@ -22,13 +23,17 @@ from PyQt5.QtWidgets import QLabel, QSizePolicy, QScrollArea, QMessageBox, QMain
 
 import tkinter as tk
 root = tk.Tk()
-width_px = int(root.winfo_screenwidth()/2)
+width_px = int(root.winfo_screenwidth())
 height_px = int(root.winfo_screenheight())
 
 space_X = int(width_px/10)
 space_Y = int(height_px/10)
 space = 10
+
+
 class Ui_Form_camera(object):
+    switch_window = QtCore.pyqtSignal()
+
     def setupUi(self, Form_camera):
         Form_camera.setObjectName("Form_camera")
         #Form_camera.resize(1344, 905)
@@ -106,6 +111,8 @@ class Ui_Form_camera(object):
         self.label_stt_OK_NG.setAlignment(QtCore.Qt.AlignCenter)
         self.label_stt_OK_NG.setObjectName("label_stt_OK_NG")
 
+        self.btn_SET_RUN.clicked.connect(self.signal_window_RUN)
+
         self.retranslateUi(Form_camera)
         QtCore.QMetaObject.connectSlotsByName(Form_camera)
 
@@ -116,7 +123,9 @@ class Ui_Form_camera(object):
         self.btn_SET_RUN.setText(_translate("Form_camera", "GO TO MODE SETUP"))
         self.label_stt_OK_NG.setText(_translate("Form_camera", "OK"))
 
-
+    def signal_window_RUN(self):
+        self.switch_window.emit()
+'''
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -125,3 +134,4 @@ if __name__ == "__main__":
     ui.setupUi(Form_camera)
     Form_camera.show()
     sys.exit(app.exec_())
+'''

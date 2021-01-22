@@ -1,5 +1,0 @@
-2020/10/30-09:59:53.630 2329 Reusing MANIFEST /home/luukhanh91/.config/chromium/Default/IndexedDB/https_chat.zalo.me_0.indexeddb.leveldb/MANIFEST-000001
-2020/10/30-09:59:58.800 2459 Level-0 table #5: started
-2020/10/30-09:59:58.813 2459 Level-0 table #5: 4163 bytes OK
-2020/10/30-09:59:58.825 2459 Delete type=0 #3
-2020/10/30-09:59:58.826 2459 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

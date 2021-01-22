@@ -1,8 +1,0 @@
-/home/luukhanh91/Desktop/camera_1/camera_1/cut_image_function/0066cat.jpg
-/home/luukhanh91/Desktop/camera_1/camera_1/image_function/0066dau.jpg
-detection_color
-311
-551
-597
-846
-False

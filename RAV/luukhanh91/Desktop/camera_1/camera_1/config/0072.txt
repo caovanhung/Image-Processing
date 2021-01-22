@@ -1,9 +1,0 @@
-/home/luukhanh91/Desktop/camera_1/camera_1/cut_image_function/0072cat.jpg
-/home/luukhanh91/Desktop/camera_1/camera_1/image_function/0072dau.jpg
-detection_pixel
-676
-991
-298
-576
-188
-False

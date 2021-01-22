@@ -24,7 +24,7 @@ flag_Camera_Open = False
 timeLIMIT_btnRUN = 1000
 cnt_OK = 0
 cnt_NG = 0
-
+flag_btnRUN = False
 class Threshold_MyLabel(QLabel):
     x0 = 0
     y0 = 0
@@ -303,7 +303,6 @@ class Ui_MainWindow(object):
         self.cnt_NG.setObjectName("cnt_NG")
 
 
-
         self.btn_START = QtWidgets.QPushButton(self.centralwidget)
         self.btn_START.setGeometry(QtCore.QRect(10, 830, 120, 120))
         self.btn_START.setObjectName("btn_START")
@@ -424,8 +423,8 @@ class Ui_MainWindow(object):
 
 
         self.img = cv2.imread(name_image,0)
-        self.img_1=cv2.imread(name_image,0)
-        self.img_2=cv2.imread(name_image,0)
+        self.img_origin_thresold=cv2.imread(name_image,0)
+        self.img_origin_ROI=cv2.imread(name_image,0)
 
         height,width = self.img.shape
         step = width
@@ -443,23 +442,27 @@ class Ui_MainWindow(object):
         global flag_Camera_Open
         if flag_Camera_Open == True:
             image = self.dir_image_raw+"/"+self.name + ".bmp"
+            f_img=cv2.imread(image,0)
         else:
             self.name = self.comboBox_listImage.currentText()
             image = self.dir_image_raw+"/"+self.name + ".bmp"
-        self.img_luu=cv2.imread(image,0)
+            f_img=cv2.imread(image,0)
         self.Threshold_bar()
 
-        self.file_img_bandau = self.dir_image_processed +"/"+ self.name+"origin_cut"+".bmp"
-        self.file_img = self.dir_image_processed +"/"+ self.name + "process"+".bmp"
-        self.file_img_cut = self.dir_image_processed +"/"+ self.name + "cut"+".bmp"
+        f_name_origin_thresold = self.dir_image_processed +"/"+ self.name+"origin_thresold"+".bmp"
+        f_name_origin_ROI = self.dir_image_processed +"/"+ self.name+"origin_ROI"+".bmp"
+        f_name_processed = self.dir_image_processed +"/"+ self.name + "process"+".bmp"
+        f_name_cut = self.dir_image_processed +"/"+ self.name + "cut"+".bmp"
 
-        self.img_2 = cv2.rectangle(self.img_2, (self.x00,self.y00),(self.x10,self.y10),(0,0,255),2)
-        imgcat=    self.img[self.y00:self.y10,self.x00:self.x10]
-        imgcut=self.img_luu[self.y00:self.y10,self.x00:self.x10]
+        self.img_origin_thresold = self.img
+        self.img_origin_ROI = cv2.rectangle(self.img_origin_ROI, (self.x00,self.y00),(self.x10,self.y10),(0,0,255),2)
+        f_img_processed = self.img[self.y00:self.y10,self.x00:self.x10]
+        f_img_cut= f_img[self.y00:self.y10,self.x00:self.x10]
 
-        cv2.imwrite(self.file_img_bandau,self.img_2)
-        cv2.imwrite(self.file_img,imgcat)
-        cv2.imwrite(self.file_img_cut,imgcut)
+        cv2.imwrite(f_name_origin_thresold,self.img_origin_thresold)
+        cv2.imwrite(f_name_origin_ROI,self.img_origin_ROI)
+        cv2.imwrite(f_name_processed,f_img_processed)
+        cv2.imwrite(f_name_cut,f_img_cut)
 
 #######################################check_box##############################################
     def checkBoxThresold(self):
@@ -508,8 +511,8 @@ class Ui_MainWindow(object):
 
             self.thresh_value=self.ScrollBar_Thresol.value()
             self.tableWidget.setItem(0,1,QTableWidgetItem(str(self.thresh_value)))
-
-            self.threshold_img=Class_Threshold(self.img,self.img_1,self.x00,self.y00,self.x10,self.y10)
+            print("point")
+            self.threshold_img=Class_Threshold(self.img,self.img_origin_thresold,self.x00,self.y00,self.x10,self.y10)
             self.threshold_img.SimpleThresholding(self.thresh_value,2)
 
             height, width  =self.img.shape
@@ -531,12 +534,10 @@ class Ui_MainWindow(object):
             camera.StartGrabbing(pylon.GrabStrategy_LatestImageOnly) 
             self.timer.start(200)#ms
             self.btn_START.setText("STOP")
-            print("STOP")
         else:
             self.timer.stop()
             camera.StopGrabbing()
             self.btn_START.setText("START")
-            print("START")
 
         self.img_thresold_label.setfdk(1)
         self.btn_OpenImage.setEnabled(1)
@@ -616,12 +617,11 @@ class Ui_MainWindow(object):
   
         #show image
         self.img = cv2.imread(name_save,0)
-        self.img_1=cv2.imread(name_save,0)
-        self.img_2=cv2.imread(name_save,0)
+        self.img_origin_thresold=cv2.imread(name_save,0)
+        self.img_origin_ROI=cv2.imread(name_save,0)
 
         #process image
         self.processing_image()
-
 
         height,width = self.img.shape
         step = width
@@ -634,8 +634,6 @@ class Ui_MainWindow(object):
         self.ScrollBar_Thresol.setEnabled(1)
         self.comboBox_listImage.setEnabled(1)
         
-        #process image
-        #self.processing_image()
 ###############################################Enhance image####################################
     def pre_process_clahe(self,image):
         global flag_Camera_Open
@@ -742,35 +740,35 @@ class Ui_MainWindow(object):
         global cnt_OK
 
         if flag_Camera_Open == True:
-            name_image = self.dir_image_processed+"/"+self.name +"process"+ ".bmp"
-            name_image_origin_cut = self.dir_image_processed +"/"+ self.name+"origin_cut"+".bmp"
+            f_name_processed = self.dir_image_processed+"/"+self.name +"process"+ ".bmp"
+            f_name_origin_ROI = self.dir_image_processed +"/"+ self.name+"origin_ROI"+".bmp"
         else:
             self.name = self.comboBox_listImage.currentText()
-            name_image = self.dir_image_processed+"/"+self.name + "process"+ ".bmp"
-            name_image_origin_cut = self.dir_image_processed +"/"+ self.name+"origin_cut"+".bmp"
+            f_name_processed = self.dir_image_processed+"/"+self.name + "process"+ ".bmp"
+            f_name_origin_ROI = self.dir_image_processed +"/"+ self.name+"origin_ROI"+".bmp"
 
-        self.img_process = cv2.imread(name_image,0)        
+        self.img_process = cv2.imread(f_name_processed,0)        
         if flag_RemoveArea == True:
             global REMOVE_ARE
             REMOVE_ARE = int(self.lineEdit_removeAREA.text())
             self.remove_are_less_more(self.img_process,REMOVE_ARE)
 
         flag_error = self.caculate_contourArea(self.img_process)
-        self.img_process = cv2.imread(name_image)
+        self.img_process = cv2.imread(f_name_processed)
         if flag_DrawArea == True:  
             self.draw_contours(self.img_process)
 
-        self.img_process = cv2.imread(name_image)
+        self.img_process = cv2.imread(f_name_processed)
         self.show_img_processed(self.img_process)
 
-        self.img_settext = cv2.imread(name_image_origin_cut)
+        self.img_settext = cv2.imread(f_name_origin_ROI)
         if flag_error > 0:
             self.label_stt_OK_NG.setText("NG")
             self.label_stt_OK_NG.setStyleSheet("background: red")
             cnt_NG = cnt_NG + 1
             self.cnt_NG.setText(str(cnt_NG))
             cv2.putText(self.img_settext, 'NG', (40,120), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 0, 255), 3, cv2.LINE_AA)
-            cv2.imwrite(name_image_origin_cut,self.img_settext)
+            cv2.imwrite(f_name_origin_ROI,self.img_settext)
         else:
             self.label_stt_OK_NG.setText("OK")
             self.label_stt_OK_NG.setStyleSheet("background: green")
@@ -778,7 +776,7 @@ class Ui_MainWindow(object):
             self.cnt_OK.setText(str(cnt_OK))
 
             cv2.putText(self.img_settext, 'OK', (40,120), cv2.FONT_HERSHEY_SIMPLEX, 5, (0, 255, 0), 3, cv2.LINE_AA)
-            cv2.imwrite(name_image_origin_cut,self.img_settext)
+            cv2.imwrite(f_name_origin_ROI,self.img_settext)
 
 
 if __name__ == "__main__":

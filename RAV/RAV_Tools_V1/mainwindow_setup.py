@@ -20,15 +20,8 @@ width_px = int(root.winfo_screenwidth()/2)
 height_px = int(root.winfo_screenheight())
 
 #camera = pylon.InstantCamera(pylon.TlFactory.GetInstance().CreateFirstDevice())
-
-
-def open_register_ui(self):
-    self.Dialog = QtWidgets.QDialog()
-    self.ui_1 = Ui_register_Dialog()
-    self.ui_1.setupUi(self.Dialog)
-    self.Dialog.show()
-
 class Ui_Dialog(object):
+    switch_window = QtCore.pyqtSignal()
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(width_px, height_px)
@@ -210,20 +203,8 @@ class Ui_Dialog(object):
 
 
 #####################################################################################
-        self.btn_RefImage.clicked.connect(self.open_register)
+        self.btn_GotoModeRun.clicked.connect(self.signal_window_SETUP)
         self.textEdit_Infor.setText("information")
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -260,12 +241,6 @@ class Ui_Dialog(object):
 
 #####################################################################################
 
-
-    def open_register(self):
-        self.timer.stop()
-        camera.StopGrabbing()
-        open_register_ui(self)
-
     def viewCam(self):
         converter = pylon.ImageFormatConverter()
         converter.OutputPixelFormat = pylon.PixelType_BGR8packed
@@ -289,8 +264,11 @@ class Ui_Dialog(object):
             self.timer.stop()
             camera.StopGrabbing()
             self.ui.btn_RUN.setText("Run")
-#####################################################################################
 
+    def signal_window_SETUP(self):
+        self.switch_window.emit()
+#####################################################################################
+'''
 
 if __name__ == "__main__":
     import sys
@@ -300,3 +278,4 @@ if __name__ == "__main__":
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())
+'''

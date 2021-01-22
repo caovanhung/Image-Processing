@@ -1,9 +1,0 @@
-2020/10/30-16:19:54.234 1f0e Reusing MANIFEST /home/luukhanh91/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2020/10/30-16:19:54.255 1f0e Recovering log #100
-2020/10/30-16:19:54.269 1f0e Reusing old log /home/luukhanh91/.config/chromium/Default/Local Storage/leveldb/000100.log 
-2020/10/30-16:23:29.355 217a Level-0 table #104: started
-2020/10/30-16:23:29.370 217a Level-0 table #104: 28831 bytes OK
-2020/10/30-16:23:29.378 217a Delete type=0 #100
-2020/10/30-16:23:35.170 217a Level-0 table #106: started
-2020/10/30-16:23:35.188 217a Level-0 table #106: 55570 bytes OK
-2020/10/30-16:23:35.195 217a Delete type=0 #103

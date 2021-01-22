@@ -1,3 +1,0 @@
-# This file is created by ibus-daemon, please do not modify it
-IBUS_ADDRESS=unix:abstract=/tmp/dbus-LlixKvMl,guid=da421ee40dbdf4db3a5702a35f9d0dad
-IBUS_DAEMON_PID=6557

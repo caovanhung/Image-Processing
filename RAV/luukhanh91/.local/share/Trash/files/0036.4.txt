@@ -1,8 +1,0 @@
-/home/tranthang/Desktop/camera_1/cut_image_function/0036cat.jpg
-/home/tranthang/Desktop/camera_1/image_function/0036dau.jpg
-detection_color
-655
-1027
-268
-623
-False

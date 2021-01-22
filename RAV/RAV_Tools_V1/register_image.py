@@ -290,6 +290,7 @@ class MyLabel(QLabel,QWidget):
         print(act.text())
 
 #####################################################################################
+'''
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -298,3 +299,4 @@ if __name__ == "__main__":
     ui.setupUi(register_Dialog)
     register_Dialog.show()
     sys.exit(app.exec_())
+'''
