@@ -1,0 +1,1378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormMain</class>
+ <widget class="QWidget" name="FormMain">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1448</width>
+    <height>993</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="frame_mainSettingGeneral_ModGuiMain">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>60</height>
+        </size>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QComboBox" name="combox_setProgram_ModGuiMain">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_saveProgram_ModGuiMain">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_editProgram_ModGuiMain">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_Global_ModGuiMain">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <property name="spacing">
+             <number>2</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lab_ProgramTime_mainSettingGeneral_ModGuiMain">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lab_Interval_mainSettingGeneral_ModGuiMain">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="spacing">
+             <number>2</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lab_showProgramTime_mainSettingGeneral_ModGuiMain">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lab_showInterval_mainSettingGeneral_ModGuiMain">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btn_Execute_mainSettingGeneral_ModGuiMain">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_Output_mainSettingGeneral_ModGuiMain">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_Utility">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>60</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_16">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>5</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_GotoRunMode_mainSettingGeneral_ModGuiMain">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>60</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(117, 117, 117);
+color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="text">
+               <string>GO TO RUN MODE</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="lab_showStatusChecking_mainSettingGeneral_ModGuiMain">
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="autoFillBackground">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(156, 232, 115);
+font: 28pt &quot;Waree&quot;;
+</string>
+              </property>
+              <property name="text">
+               <string>OK</string>
+              </property>
+              <property name="textFormat">
+               <enum>Qt::PlainText</enum>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QTabWidget" name="tab_MainCamera">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="tab_MainCamera_1">
+          <attribute name="title">
+           <string>Tab 1</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <layout class="QVBoxLayout" name="v_tabMainCam1">
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="h_tabMainCam1">
+               <item>
+                <widget class="QPushButton" name="btn_setCamera_ModGuiMain">
+                 <property name="minimumSize">
+                  <size>
+                   <width>80</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>200</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Set Camera</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_addTool_ModGuiMain">
+                 <property name="minimumSize">
+                  <size>
+                   <width>80</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Add Tool</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="h_scrollShowTool">
+                 <item>
+                  <widget class="QScrollArea" name="scroll_ShowTool_ModGuiMain">
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>200</height>
+                    </size>
+                   </property>
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>1242</width>
+                      <height>96</height>
+                     </rect>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="h_showCam_setupTool">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <layout class="QVBoxLayout" name="v_showCam">
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QHBoxLayout" name="h_showCam_setupShow">
+                   <item>
+                    <widget class="QComboBox" name="combox_selectCam_ModGuiMain"/>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_live_ModGuiMain">
+                     <property name="text">
+                      <string>Live</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="h_showCam_setupShow_zoom">
+                     <item>
+                      <widget class="QPushButton" name="btn_zoomOut_ModGuiMain">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_zoomIn_ModGuiMain">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_zoomNormal_ModGuiMain">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QSpinBox" name="spbox_setPercentZoom_ModGuiMain">
+                       <property name="maximum">
+                        <number>100</number>
+                       </property>
+                       <property name="singleStep">
+                        <number>10</number>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="v_showCam_areaShow">
+                   <item>
+                    <widget class="QScrollArea" name="scroll_showCam_ModGuiMain">
+                     <property name="minimumSize">
+                      <size>
+                       <width>640</width>
+                       <height>640</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>640</width>
+                       <height>640</height>
+                      </size>
+                     </property>
+                     <property name="widgetResizable">
+                      <bool>true</bool>
+                     </property>
+                     <widget class="QWidget" name="scrollAreaWidgetContents">
+                      <property name="geometry">
+                       <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>638</width>
+                        <height>638</height>
+                       </rect>
+                      </property>
+                     </widget>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="v_setupTool">
+                 <item>
+                  <spacer name="verticalSpacer_12">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>10</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="v_SettingGeneral_ModGuiMain">
+                   <item>
+                    <widget class="QFrame" name="frame_SettingGeneral_ModGuiMain">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>400</width>
+                       <height>700</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(204, 204, 204);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_29">
+                      <item>
+                       <layout class="QVBoxLayout" name="verticalLayout_100">
+                        <item>
+                         <widget class="QWidget" name="verticalWidget_100" native="true">
+                          <layout class="QVBoxLayout" name="verticalLayout_10">
+                           <property name="leftMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="topMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="rightMargin">
+                            <number>0</number>
+                           </property>
+                           <property name="bottomMargin">
+                            <number>0</number>
+                           </property>
+                           <item>
+                            <widget class="QFrame" name="frame_AreaTittleSetupTool_ModGuiMain">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="styleSheet">
+                              <string notr="true">background-color: rgb(0, 29, 88);
+color: rgb(255, 255, 255);</string>
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::StyledPanel</enum>
+                             </property>
+                             <property name="frameShadow">
+                              <enum>QFrame::Raised</enum>
+                             </property>
+                             <layout class="QVBoxLayout" name="verticalLayout_15">
+                              <property name="leftMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="topMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <property name="bottomMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <widget class="QLabel" name="lab_NoImportant101">
+                                <property name="font">
+                                 <font>
+                                  <pointsize>12</pointsize>
+                                 </font>
+                                </property>
+                                <property name="text">
+                                 <string>1D Code Reader</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLabel" name="lab_NoImportant100">
+                                <property name="text">
+                                 <string>     1D Code Reader</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLabel" name="lab_NoImportant102">
+                                <property name="frameShape">
+                                 <enum>QFrame::HLine</enum>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayout_123">
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <spacer name="horizontalSpacer_124">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                                <item>
+                                 <widget class="QLabel" name="lab_RefetenceImage_setupTool_ModGuiMain">
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: rgb(36, 72, 109);</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Reference Image</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QPushButton" name="btn_RefetenceImage_setupTool_ModGuiMain">
+                                  <property name="styleSheet">
+                                   <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(229, 229, 229);</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>1-100</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                             </layout>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_101">
+                          <item>
+                           <widget class="QFrame" name="frame_AreaSelecSetupTool_ModGuiMain">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_16">
+                             <item>
+                              <layout class="QVBoxLayout" name="verticalLayout_102">
+                               <item>
+                                <widget class="QFrame" name="frame_Enghence_setupTool_ModGuiMain">
+                                 <property name="frameShape">
+                                  <enum>QFrame::StyledPanel</enum>
+                                 </property>
+                                 <property name="frameShadow">
+                                  <enum>QFrame::Raised</enum>
+                                 </property>
+                                 <layout class="QHBoxLayout" name="horizontalLayout_19">
+                                  <item>
+                                   <layout class="QHBoxLayout" name="horizontalLayout_111">
+                                    <item>
+                                     <layout class="QVBoxLayout" name="verticalLayout_112">
+                                      <item>
+                                       <widget class="QPushButton" name="btn_InspecRegion_setupTool_ModGuiMain">
+                                        <property name="text">
+                                         <string>PushButton</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_InspecRegion">
+                                        <property name="text">
+                                         <string>Inspection Region</string>
+                                        </property>
+                                        <property name="alignment">
+                                         <set>Qt::AlignCenter</set>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                    <item>
+                                     <layout class="QVBoxLayout" name="verticalLayout_113">
+                                      <item>
+                                       <widget class="QPushButton" name="btn_ExtractColor_setupTool_ModGuiMain">
+                                        <property name="text">
+                                         <string>PushButton</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_ExtractColor">
+                                        <property name="text">
+                                         <string>Extract Color</string>
+                                        </property>
+                                        <property name="alignment">
+                                         <set>Qt::AlignCenter</set>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                    <item>
+                                     <layout class="QVBoxLayout" name="verticalLayout_114">
+                                      <item>
+                                       <widget class="QPushButton" name="btn_ImageEnghance_setupTool_ModGuiMain">
+                                        <property name="text">
+                                         <string>PushButton</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_ImageEnghance">
+                                        <property name="text">
+                                         <string>Image Enghance</string>
+                                        </property>
+                                        <property name="alignment">
+                                         <set>Qt::AlignCenter</set>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                   </layout>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_100">
+                                 <item>
+                                  <widget class="QLabel" name="lab_DetecCondi">
+                                   <property name="text">
+                                    <string>Detection Condition</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_103">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
+                                  <widget class="QPushButton" name="btn_DetecCondi_setupTool_ModGuiMain">
+                                   <property name="text">
+                                    <string>&gt;&gt;&gt;</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <widget class="QFrame" name="frame_DetecCondi_setupTool_ModGuiMain">
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                 </property>
+                                 <property name="frameShape">
+                                  <enum>QFrame::StyledPanel</enum>
+                                 </property>
+                                 <property name="frameShadow">
+                                  <enum>QFrame::Raised</enum>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                                  <item>
+                                   <layout class="QVBoxLayout" name="verticalLayout_104">
+                                    <item>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_105">
+                                      <item>
+                                       <spacer name="horizontalSpacer_106">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>40</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_CodeType">
+                                        <property name="text">
+                                         <string>Code Type</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QComboBox" name="combox_CodeType_setupTool_ModGuiMain"/>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                    <item>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_107">
+                                      <item>
+                                       <spacer name="horizontalSpacer_108">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>40</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                      <item>
+                                       <widget class="QPushButton" name="btn_AutoTurning_setupTool_ModGuiMain">
+                                        <property name="text">
+                                         <string>Auto-Turning</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                    <item>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_109">
+                                      <item>
+                                       <spacer name="horizontalSpacer_110">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>40</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_CodeResulation">
+                                        <property name="text">
+                                         <string>Code Resulation</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_showPixel_DetecCond_setupTool">
+                                        <property name="text">
+                                         <string>....</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLabel" name="lab_pixel">
+                                        <property name="text">
+                                         <string>pixel</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                   </layout>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_101">
+                                 <item>
+                                  <widget class="QLabel" name="lab_ReadDataSetting">
+                                   <property name="text">
+                                    <string>Read data settings</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_102">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
+                                  <widget class="QPushButton" name="btn_ReadDataSetting_setupTool_ModGuiMain">
+                                   <property name="text">
+                                    <string>&gt;&gt;&gt;</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <widget class="QFrame" name="frame_ReadDataSetting_setupTool_ModGuiMain">
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                 </property>
+                                 <property name="frameShape">
+                                  <enum>QFrame::StyledPanel</enum>
+                                 </property>
+                                 <property name="frameShadow">
+                                  <enum>QFrame::Raised</enum>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_23">
+                                  <item>
+                                   <layout class="QVBoxLayout" name="verticalLayout_118">
+                                    <item>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_119">
+                                      <item>
+                                       <widget class="QLabel" name="label_21">
+                                        <property name="text">
+                                         <string>Read Data</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                   </layout>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_103">
+                                 <item>
+                                  <widget class="QLabel" name="lab_Verification">
+                                   <property name="text">
+                                    <string>Verification</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_100">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
+                                  <widget class="QPushButton" name="btn_Verification_setupTool_ModGuiMain">
+                                   <property name="text">
+                                    <string>&gt;&gt;&gt;</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <widget class="QFrame" name="frame_Verification_setupTool_ModGuiMain">
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                 </property>
+                                 <property name="frameShape">
+                                  <enum>QFrame::StyledPanel</enum>
+                                 </property>
+                                 <property name="frameShadow">
+                                  <enum>QFrame::Raised</enum>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_27">
+                                  <item>
+                                   <layout class="QVBoxLayout" name="verticalLayout_120"/>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </item>
+                               <item>
+                                <layout class="QHBoxLayout" name="horizontalLayout_102">
+                                 <item>
+                                  <widget class="QLabel" name="lab_JudgCondi">
+                                   <property name="text">
+                                    <string>Judgment Condition</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_104">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
+                                  <widget class="QPushButton" name="btn_JudgCondi_setupTool_ModGuiMain">
+                                   <property name="text">
+                                    <string>&gt;&gt;&gt;</string>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </item>
+                               <item>
+                                <widget class="QFrame" name="frame_JudgCondi_setupTool_ModGuiMain">
+                                 <property name="styleSheet">
+                                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                 </property>
+                                 <property name="frameShape">
+                                  <enum>QFrame::StyledPanel</enum>
+                                 </property>
+                                 <property name="frameShadow">
+                                  <enum>QFrame::Raised</enum>
+                                 </property>
+                                 <layout class="QVBoxLayout" name="verticalLayout_29">
+                                  <item>
+                                   <layout class="QVBoxLayout" name="verticalLayout_115">
+                                    <item>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_116">
+                                      <item>
+                                       <widget class="QLabel" name="lab_ReferencePatter">
+                                        <property name="text">
+                                         <string>Reference Patter</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QPushButton" name="btn_CopyReadData_setupTool_ModGuiMain">
+                                        <property name="text">
+                                         <string>Copy from read data</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </item>
+                                    <item>
+                                     <widget class="QLineEdit" name="lineEdit_CopyReadData_setupTool_ModGuiMain">
+                                      <property name="styleSheet">
+                                       <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                    <item>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_117"/>
+                                    </item>
+                                   </layout>
+                                  </item>
+                                 </layout>
+                                </widget>
+                               </item>
+                              </layout>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_AreaOkCencelSetupTool_ModGuiMain">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_40">
+                           <item>
+                            <layout class="QHBoxLayout" name="horizontalLayout_121">
+                             <item>
+                              <widget class="QPushButton" name="btn_Display_setupTool_ModGuiMain">
+                               <property name="text">
+                                <string>Display</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <spacer name="horizontalSpacer_122">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>40</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_Ok_setupTool_ModGuiMain">
+                               <property name="text">
+                                <string>OK</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_Cancel_setupTool_ModGuiMain">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>150</width>
+                                 <height>60</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(121, 121, 121);</string>
+                               </property>
+                               <property name="text">
+                                <string>Cancel</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="sizeConstraint">
+                    <enum>QLayout::SetDefaultConstraint</enum>
+                   </property>
+                   <item>
+                    <widget class="QFrame" name="frame_BtnRun_ModGuiMain">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: rgb(0, 0, 0);
+background-color: rgb(39, 39, 39);</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Sunken</enum>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_18">
+                      <property name="spacing">
+                       <number>0</number>
+                      </property>
+                      <property name="sizeConstraint">
+                       <enum>QLayout::SetFixedSize</enum>
+                      </property>
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_17">
+                        <property name="spacing">
+                         <number>20</number>
+                        </property>
+                        <item>
+                         <widget class="QPushButton" name="btn_RegisterImage_ModGuiMain">
+                          <property name="minimumSize">
+                           <size>
+                            <width>100</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>150</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(106, 106, 106);</string>
+                          </property>
+                          <property name="text">
+                           <string>Register Imgae</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_3">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="btn_Run_ModGuiMain">
+                          <property name="minimumSize">
+                           <size>
+                            <width>80</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>100</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(37, 75, 113);</string>
+                          </property>
+                          <property name="text">
+                           <string>Run</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_4">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Fixed</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>10</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="btn_Running_ModGuiMain">
+                          <property name="maximumSize">
+                           <size>
+                            <width>100</width>
+                            <height>60</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(56, 112, 168);</string>
+                          </property>
+                          <property name="text">
+                           <string>Running</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="tab_MainCamera_2">
+          <attribute name="title">
+           <string>Tab 2</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_24"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
